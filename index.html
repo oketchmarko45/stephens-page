@@ -7,60 +7,100 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       line-height: 1.6;
-      background: #f4f4f4;
+      background: #f9f9f9;
       color: #333;
-      padding: 0 1rem;
     }
+
     header {
       background: #0b3d91;
       color: white;
       padding: 2rem 1rem;
-      text-align: center;
     }
-    header h1 { font-size: 2rem; }
-    header p { font-size: 1rem; margin-top: 0.5rem; }
+
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
 
     nav {
       background: #062c6b;
       text-align: center;
-      padding: 0.5rem;
+      padding: 0.7rem;
     }
+
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
-    nav a:hover { text-decoration: underline; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     section {
-      padding: 2rem 0;
-      max-width: 900px;
-      margin: auto;
-    }
-    .services, .about, .contact {
-      background: white;
+      max-width: 1000px;
+      margin: 2rem auto;
       padding: 1.5rem;
+      background: white;
       border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
+
     h2 {
       color: #0b3d91;
       margin-bottom: 1rem;
     }
 
-    ul { list-style: none; padding-left: 1rem; }
-    ul li::before {
-      content: "🦴";
-      margin-right: 0.5rem;
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #0b3d91;
+      padding-left: 1rem;
+      margin: 1rem 0;
     }
 
     form input, form textarea {
       width: 100%;
-      padding: 0.8rem;
+      padding: 0.75rem;
       margin: 0.5rem 0;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -70,60 +110,86 @@
       background: #0b3d91;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     footer {
-      text-align: center;
-      padding: 1rem;
       background: #062c6b;
       color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      nav a { display: block; margin: 0.5rem 0; }
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1.5rem;">
-  <img src="stephen.jpg" alt="Dr. Stephen Kiinde" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid white;" />
-  <div>
-    <h1 style="font-size: 2rem;">Dr. Stephen Kiinde</h1>
-    <p style="font-size: 1rem; margin-top: 0.5rem;">Orthopedic Specialist | Bone & Joint Expert</p>
-  </div>
-</header>
+  <header>
+    <div class="hero">
+      <img src="stephen.jpg" alt="Dr. Stephen Kiinde" />
+      <div class="hero-text">
+        <h1>Dr. Stephen Kiinde</h1>
+        <p>Consultant Orthopedic Surgeon | Bone & Joint Specialist | Nairobi, Kenya</p>
+      </div>
+    </div>
+  </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" class="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>I’m Dr. Stephen Kiinde, an orthopedic specialist committed to helping people heal and move freely again. With over a decade of experience, I’ve treated hundreds of patients with bone fractures, joint issues, sports injuries, and more. My mission is to deliver precise treatment and compassionate care every step of the way.</p>
+    <p>I’m Dr. Stephen Kiinde, a board-certified orthopedic specialist with over 10 years of experience in treating fractures, joint disorders, and musculoskeletal injuries. I’m dedicated to restoring mobility and improving the quality of life for my patients through modern, evidence-based treatment approaches.</p>
   </section>
 
-  <section id="services" class="services">
-    <h2>Services</h2>
+  <section id="services">
+    <h2>Medical Services</h2>
     <ul>
-      <li>Fracture Treatment & Casting</li>
-      <li>Joint Replacement Surgery</li>
-      <li>Sports Injury Management</li>
+      <li>Fracture Treatment & Immobilization</li>
+      <li>Joint Replacement Surgery (Knee, Hip, Shoulder)</li>
+      <li>Sports Injury Management & Rehab</li>
+      <li>Pediatric Bone Care</li>
+      <li>Arthritis & Joint Pain Treatments</li>
       <li>Bone Realignment Procedures</li>
-      <li>Pediatric Orthopedic Care</li>
     </ul>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Phone: <strong>0703 377 658</strong></p>
-    <p>Alternatively, send a message using the form below:</p>
+  <section id="experience">
+    <h2>Experience & Credentials</h2>
+    <ul>
+      <li>MBChB - University of Nairobi</li>
+      <li>M.Med Orthopedics - Kenyatta University</li>
+      <li>Fellowship in Joint Replacement – India</li>
+      <li>10+ years of practice in public and private hospitals</li>
+      <li>Member – Kenya Orthopaedic Association (KOA)</li>
+    </ul>
+  </section>
+
+  <section id="testimonials">
+    <h2>Patient Testimonials</h2>
+    <blockquote>"Dr. Kiinde treated my son's broken leg with such care and professionalism. We’ll forever be grateful!" – Mary A.</blockquote>
+    <blockquote>"I had knee replacement surgery under Dr. Kiinde, and the recovery was amazing. Highly recommended!" – John M.</blockquote>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Dr. Kiinde</h2>
+    <p>📞 Phone: <strong>0703 377 658</strong></p>
+    <p>📍 Nairobi, Kenya</p>
     <form onsubmit="handleSubmit(event)">
       <input type="text" id="name" placeholder="Your Name" required />
       <input type="email" id="email" placeholder="Your Email" required />
@@ -132,6 +198,15 @@
     </form>
     <p id="response" style="color: green; margin-top: 1rem;"></p>
   </section>
+
+  <a href="https://wa.me/254703377658" target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; 
+   border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; 
+   justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000;" 
+   title="Chat with Dr. Kiinde on WhatsApp">
+  &#x1F4AC;
+</a>
+
 
   <footer>
     &copy; 2025 Dr. Stephen Kiinde | All Rights Reserved
