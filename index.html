@@ -54,10 +54,16 @@
     }
 
     nav {
-      background: #062c6b;
-      text-align: center;
-      padding: 0.7rem;
-    }
+  background: #062c6b;
+  text-align: center;
+  padding: 0.7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 
     nav a {
       color: white;
@@ -174,20 +180,19 @@
   <section id="experience">
     <h2>Experience & Credentials</h2>
     <ul>
-      <li>MBChB - University of Nairobi</li>
-      <li>M.Med Orthopedics - Kenyatta University</li>
-      <li>Fellowship in Joint Replacement – India</li>
-      <li>10+ years of practice in public and private hospitals</li>
+      <li>MBChB - KMTC</li>
+      <li>M.Med Orthopedics - KMTC</li>
+      <li>Fellowship in Joint Replacement – Mama Lucy Hospital</li>
+      <li>5+ years of practice in public and private hospitals</li>
       <li>Member – Kenya Orthopaedic Association (KOA)</li>
     </ul>
   </section>
 
   <section id="testimonials">
     <h2>Patient Testimonials</h2>
-   /*.. <blockquote>"Dr. Kiinde treated my son's broken leg with such care and professionalism. We’ll forever be grateful!" – Mary A.</blockquote>
-    <blockquote>"I had knee replacement surgery under Dr. Kiinde, and the recovery was amazing. Highly recommended!" – John M.</blockquote>
-  </section>..*/
-
+   <!.-- <blockquote>"Dr. Kiinde treated my son's broken leg with such care and professionalism. We’ll forever be grateful!" – Mary A.</blockquote>
+    <blockquote>"I had knee replacement surgery under Dr. Kiinde, and the recovery was amazing. Highly recommended!" – John M.</blockquote> -->
+  </section>
   <section id="contact">
     <h2>Contact Dr. Kiinde</h2>
     <p>📞 Phone: <strong>0703 377 658</strong></p>
@@ -229,6 +234,18 @@
         document.getElementById("response").innerText = "Please fill in all fields.";
       }
     }
+
+   document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
   </script>
 
 </body>
