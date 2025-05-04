@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <title>Dr. Stephen Kiinde | Orthopedic Specialist</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,16 +53,15 @@
     }
 
     nav {
-  background: #062c6b;
-  text-align: center;
-  padding: 0.7rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
+      background: #062c6b;
+      text-align: center;
+      padding: 0.7rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
     nav a {
       color: white;
@@ -132,6 +130,20 @@
       font-size: 0.9rem;
     }
 
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #0b3d91;
+      color: white;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+    }
+
     @media (max-width: 700px) {
       .hero {
         flex-direction: column;
@@ -190,79 +202,78 @@
 
   <section id="testimonials">
     <h2>Patient Testimonials</h2>
-   <!.-- <blockquote>"Dr. Kiinde treated my son's broken leg with such care and professionalism. We’ll forever be grateful!" – Mary A.</blockquote>
-    <blockquote>"I had knee replacement surgery under Dr. Kiinde, and the recovery was amazing. Highly recommended!" – John M.</blockquote> -->
+    <!--
+    <blockquote>"Dr. Kiinde treated my son's broken leg with such care and professionalism. We’ll forever be grateful!" – Mary A.</blockquote>
+    <blockquote>"I had knee replacement surgery under Dr. Kiinde, and the recovery was amazing. Highly recommended!" – John M.</blockquote>
+    -->
   </section>
+
   <section id="contact">
     <h2>Contact Dr. Kiinde</h2>
     <p>📞 Phone: <strong>0703 377 658</strong></p>
     <p>📍 Nairobi, Kenya</p>
     <form action="https://script.google.com/macros/s/AKfycbztXiXyY7mLL3CprjpbqITfeejcv_tna_mbZIZd26IEVnjOg5XxJSBb0XsLjuVxrPyA/exec" method="POST">
-  <input type="text" name="name" id="name" placeholder="Your Name" required />
-  <input type="email" name="email" id="email" placeholder="Your Email" required />
-  <textarea name="message" id="message" placeholder="Your Message" rows="4" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-
-<p id="response" style="color: green; margin-top: 1rem;"></p>
+      <input type="text" name="name" id="name" placeholder="Your Name" required />
+      <input type="email" name="email" id="email" placeholder="Your Email" required />
+      <textarea name="message" id="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
+  <div id="popup">Thank you! Your message has been sent successfully.</div>
+
   <a href="https://wa.me/254703377658" 
-   target="_blank" 
-   title="Chat with Dr. Kiinde on WhatsApp" 
-   style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; 
-          width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; 
-          justify-content: center; font-size: 26px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-          z-index: 1000;">
-  <i class="fab fa-whatsapp"></i>
-</a>
+     target="_blank" 
+     title="Chat with Dr. Kiinde on WhatsApp" 
+     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; 
+            width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; font-size: 26px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            z-index: 1000;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <footer>
     &copy; 2025 Dr. Stephen Kiinde | All Rights Reserved
   </footer>
 
   <script>
-    <script>
-document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault(); // prevent default form action
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-  const form = e.target;
-  const formData = new FormData(form);
-  const responseBox = document.getElementById("response");
+      const form = e.target;
+      const formData = new FormData(form);
+      const popup = document.getElementById("popup");
 
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-  })
-  .then((res) => res.json().catch(() => ({ result: "success" })))
-  .then((data) => {
-    if (data.result === "success") {
-      responseBox.innerText = "Thank you! Your message has been sent successfully.";
-      responseBox.style.color = "green";
-      form.reset();
-    } else {
-      responseBox.innerText = "Oops! Something went wrong. Please try again.";
-      responseBox.style.color = "red";
-    }
-  })
-  .catch((err) => {
-    responseBox.innerText = "Error connecting to server.";
-    responseBox.style.color = "red";
-    console.error(err);
-  });
-});
-
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+      .then((res) => res.json().catch(() => ({ result: "success" })))
+      .then((data) => {
+        if (data.result === "success") {
+          popup.style.display = "block";
+          form.reset();
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 3000);
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      })
+      .catch((err) => {
+        alert("Error connecting to server.");
+        console.error(err);
+      });
     });
-  });
-});
-</script>
 
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
-
 </body>
 </html>
